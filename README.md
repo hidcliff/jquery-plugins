@@ -1,4 +1,4 @@
 jquery-plugins
 ==============
 
-jquery plugins
+maxLength
