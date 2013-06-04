@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>maxLength</title>
+</head>
+
+<body>
+
+<h1>Demo - jquery.maxLength</h1>
+
+<textarea id="content" rows="10" cols="50"></textarea>
+<p><span id="count">0</span> / 1,000byte</p>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.maxLength.js"></script>
+<script type="text/javascript">
+(function($) {
+	$("#content").maxLength({
+		unit: 'bytes',
+		max: 1000,
+		isCutValue: true
+	}).bind("onchange", function(e) {
+		var result = arguments[1];
+		//$("#count").html(("" + result.count).replace(/(\d)(?=(\d{3})+$)/igm, "$1,"));
+		$("#count").html(arguments[1].count);
+	});
+}(jQuery));
+</script>
+</body>
+
+</htnml>
